@@ -45,6 +45,7 @@ public class ProductService
 		return productRepository.findBySku(sku);		
 	}
 	
+	@Transactional
 	public ProductDTO save(ProductDTO productDTO)
 	{
 		Product product = new Product(productDTO.getSku(), productDTO.getName(), productDTO.getPrice(), productDTO.getCreationDate());

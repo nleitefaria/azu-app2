@@ -18,7 +18,7 @@ public class Product
 	@Column(unique = true, nullable = false)
 	private Integer id;
 	
-	//@Column(unique = true)
+	@Column(unique = true)
 	private String sku ;
 	
 	private String name;
