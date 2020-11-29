@@ -27,12 +27,14 @@ public class IndexController
 		
 		URI uri;
 		HttpHeaders httpHeaders = new HttpHeaders();
-		try {
+		try 
+		{
 			uri = new URI("/swagger-ui/index.html");
 			httpHeaders = new HttpHeaders();
 			httpHeaders.setLocation(uri);
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
+		} 
+		catch (URISyntaxException e) 
+		{
 			e.printStackTrace();
 		}
 	    return new ResponseEntity<>(httpHeaders, HttpStatus.SEE_OTHER);	

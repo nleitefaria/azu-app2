@@ -46,11 +46,11 @@ public class ProductService
 		return productRepository.findBySku(sku);		
 	}
 	
-	@Transactional
-	public Product save(ProductDTO productDTO)
+	public ProductDTO save(ProductDTO productDTO)
 	{
-		Product product = new Product(productDTO.getSku(), productDTO.getName(), productDTO.getPrice(), new Date());		
-		return productRepository.save(product);
+		Product product = new Product(productDTO.getSku(), productDTO.getName(), productDTO.getPrice(), productDTO.getCreationDate());
+		productRepository.save(product);
+		return productDTO;
 	}
 
 	@Transactional

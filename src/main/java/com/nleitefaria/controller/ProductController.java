@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nleitefaria.domain.ProductDTO;
-import com.nleitefaria.model.Product;
 import com.nleitefaria.service.ProductService;
 
 import io.swagger.annotations.Api;
@@ -36,16 +35,16 @@ public class ProductController {
 	
 	@Operation(summary = "Create a product")
 	@PostMapping("/api/v1/product")
-	public ResponseEntity<Product> save(@RequestBody ProductDTO productDTO) 
+	public ResponseEntity<ProductDTO> save(@RequestBody ProductDTO productDTO) 
 	{
-		Product product = productService.save(productDTO);		
-		if(product != null)
+		ProductDTO p = productService.save(productDTO);		
+		if(productDTO != null)
 		{
-			return new ResponseEntity<Product>(productService.save(productDTO), HttpStatus.CREATED);		
+			return new ResponseEntity<ProductDTO>(p, HttpStatus.CREATED);		
 		}
 		else
 		{
-			return new ResponseEntity<Product>(productService.save(productDTO), HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<ProductDTO>(p, HttpStatus.BAD_REQUEST);
 		}	  
 	}
 	

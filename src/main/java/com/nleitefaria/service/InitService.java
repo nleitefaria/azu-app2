@@ -15,14 +15,11 @@ public class InitService
 {
 	@Autowired
 	ProductService productService;
-	
-	@Autowired
-	OrderService orderService;
-	
+
 	public void init() 
 	{
 		initProducts();
-		initOrders();
+		
 	}
 	
 	private void initProducts()
@@ -42,16 +39,6 @@ public class InitService
 		productService.save(product6);	
 	}
 	
-	private void initOrders()
-	{
-		List<ProductDTO> productsDTOList1 = new ArrayList<ProductDTO>();
-		ProductDTO productDTO1 = productService.findBySku("A1B2011");
-		ProductDTO productDTO2 = productService.findBySku("B1B2011");
-		productsDTOList1.add(productDTO1);
-		productsDTOList1.add(productDTO2);
-		Double totalAmount1 = productDTO1.getPrice() + productDTO2.getPrice();		
-		OrderDTO orderDTO1 = new OrderDTO("nleitefaria@outlook.com", new Date(), productsDTOList1, totalAmount1); 
-		orderService.save(orderDTO1);
-	}
+	
 
 }
