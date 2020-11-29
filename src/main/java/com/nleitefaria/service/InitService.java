@@ -12,11 +12,16 @@ public class InitService
 {
 	@Autowired
 	ProductService productService;
-
+	
 	public void init() 
 	{
-		initProducts();
-		
+		clearDB();
+		initProducts();	
+	}
+	
+	private void clearDB()
+	{
+		productService.deleteAll();
 	}
 	
 	private void initProducts()
@@ -35,7 +40,4 @@ public class InitService
 		productService.save(product5);
 		productService.save(product6);	
 	}
-	
-	
-
 }

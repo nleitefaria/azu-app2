@@ -88,5 +88,10 @@ public class ProductService
 			product.setCreationDate(productDTO.getCreationDate());			
 		}
 		productRepository.save(product);	
+	}
+
+	@Transactional
+	public void deleteAll() {
+		productRepository.deleteAll();
 	}	
 }
