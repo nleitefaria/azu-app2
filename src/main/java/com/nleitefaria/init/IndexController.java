@@ -17,8 +17,14 @@ public class IndexController
 {
 	@Autowired
 	InitService initService;
-	
-    @GetMapping("/")
+
+	@GetMapping("/sanity")
+	public ResponseEntity<String> sanity()
+	{
+		return new ResponseEntity<String>("OK",HttpStatus.OK);
+	}
+
+		@GetMapping("/")
 	public ResponseEntity<Object> initDB() 
     {	
     	System.out.println("Initing DB");
