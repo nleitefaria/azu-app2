@@ -20,7 +20,7 @@ public class AddressController {
     public ResponseEntity<List<AddressDTO>> findAll()
     {
         List addressDTOList = new ArrayList();
-        //TODO : Finish this
+        //TODO : Finish this, by adding a service
         return new ResponseEntity<List<AddressDTO>>(addressDTOList, HttpStatus.OK);
     }
 }
