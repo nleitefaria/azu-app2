@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 public class AddressController {
 
+    //TODO : Finish this
     @Operation(summary = "Get all Addresses")
     @GetMapping("/api/v1/addresses")
     public ResponseEntity<List<AddressDTO>> findAll()
